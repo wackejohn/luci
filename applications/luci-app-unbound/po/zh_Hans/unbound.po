@@ -682,7 +682,7 @@ msgstr "类型"
 
 #: applications/luci-app-unbound/luasrc/controller/unbound.lua:27
 msgid "Unbound"
-msgstr "Unbound(DNS服務)"
+msgstr "Unbound(DNS服务)"
 
 #: applications/luci-app-unbound/luasrc/model/cbi/unbound/configure.lua:26
 msgid ""

@@ -168,6 +168,22 @@ return network.registerProtocol('wireguard', {
 		o.datatype = 'ipaddr';
 		o.optional = true;
 
+		o = s.taboption('general', form.Value, 'gateway', _('Gateway'), _('Recommended. Gateway of the WireGuard interface.'));
+		o.datatype = 'ipaddr';
+		o.optional = true;
+        
+		o = s.taboption('general', form.Value, 'ip6gw', _('IPv6 Gateway'), _('Recommended. IPv6 Gateway of the WireGuard interface.'));
+		o.datatype = 'ipaddr';
+		o.optional = true;
+        
+		o = s.taboption('general', form.Value, 'delay', _('Delay Time'), _('Recommended. Delay Up the Wireguard interface.'));
+		o.datatype = 'timess';
+		o.optional = true;
+
+		o = s.taboption('general', form.Value, 'ip6subnet', _('IPv6 Subnet'), _('Recommended. IPv6 Subnet of the WireGuard interface.'));
+		o.datatype = 'ipaddr';
+		o.optional = true;
+
 		o = s.taboption('general', form.Flag, 'nohostroute', _('No Host Routes'), _('Optional. Do not create host routes to peers.'));
 		o.optional = true;
 
@@ -178,6 +194,17 @@ return network.registerProtocol('wireguard', {
 		};
 
 		// -- advanced --------------------------------------------------------------------
+
+		o = s.taboption('advanced', form.Flag, 'flip_msb', _('Enable Flip Msb'), _('Optional. Enable Flip Msb Support.'));
+		o.optional = true;
+
+		o = s.taboption('advanced', form.Flag, 'defaultip6gw', _('Use default IPv6 gateway'), _('Optional. Create default ipv6 route to main routing table.'));
+		o.optional = true;
+
+		o = s.taboption('advanced', form.Value, 'metric6', _('IPv6 Metric'), _('Optional'));
+		o.datatype = 'uinteger';
+		o.placeholder = '0';
+		o.optional = true;
 
 		o = s.taboption('advanced', form.Value, 'mtu', _('MTU'), _('Optional. Maximum Transmission Unit of tunnel interface.'));
 		o.datatype = 'range(0,8940)';
@@ -642,6 +669,9 @@ return network.registerProtocol('wireguard', {
 		};
 
 		o = ss.option(form.Flag, 'route_allowed_ips', _('Route Allowed IPs'), _('Optional. Create routes for Allowed IPs for this peer.'));
+		o.modalonly = true;
+
+		o = ss.option(form.Flag, 'update_route', _('Update Peer Route'), _('Optional, Update custom route for this peer.'));
 		o.modalonly = true;
 
 		o = ss.option(form.Value, 'endpoint_host', _('Endpoint Host'), _('Optional. Host of peer. Names are resolved prior to bringing up the interface.'));

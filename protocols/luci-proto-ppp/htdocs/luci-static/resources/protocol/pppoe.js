@@ -85,6 +85,10 @@ return network.registerProtocol('pppoe', {
 			}
 		};
 
+		o = s.taboption('advanced', form.Value, 'delay', _('Delay Time'), _('Delay Up the PPP link.'));
+		o.datatype = 'timess';
+		o.optional = true;
+
 		o = s.taboption('advanced', form.Value, 'host_uniq', _('Host-Uniq tag content'), _('Raw hex-encoded bytes. Leave empty unless your ISP require this'));
 		o.placeholder = _('auto');
 		o.datatype    = 'hexstring';

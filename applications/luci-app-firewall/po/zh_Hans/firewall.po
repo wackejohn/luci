@@ -204,7 +204,7 @@ msgid ""
 "established connections. Format is value[/mask]. If a mask is specified then "
 "those bits set in the mask are zeroed out."
 msgstr ""
-"在已建立的连接上对给定值和现有标记值进行按位异或。格式为 value[/mask]。如果指"
+"在已建立的连接上对给定值和现有标记值进行按位异或。格式为 值[/掩码]。如果指"
 "定了掩码，则掩码中设置的位将归零。"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:264
@@ -349,8 +349,10 @@ msgstr ""
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:243
 msgid ""
 "Enable network address and port translation IPv6 (NAT6 or NAPT6) for "
-"outbound traffic on this zone."
-msgstr "为此区域出站流量开启网络地址和端口转换 IPv6 （NAT6 或 NAPT6）。"
+"outbound traffic on this zone. This is typically enabled on the <em>wan</em> "
+"zone."
+msgstr "为此区域出站流量开启网络地址和端口转换 IPv6 （NAT6 或 NAPT6）。 "
+"<em>wan</em>区域通常开启此功能。"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/ipsets.js:211
 msgid "Enabled"
@@ -573,7 +575,7 @@ msgstr "IPv6"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:242
 msgid "IPv6 Masquerading"
-msgstr "IPv6 伪装"
+msgstr "IPv6 动态伪装"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:193
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:282
@@ -676,9 +678,12 @@ msgstr ""
 "burst? 突发 <var>%{limit.burst}</var>}"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:175
+msgid "Limited ipv6 masquerading enabled"
+msgstr "已启用有限IPv6伪装"
+
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:250
-msgid "Limited masquerading enabled"
-msgstr "已启用有限伪装"
+msgid "Limited ipv4 masquerading enabled"
+msgstr "已启用有限IPv4伪装"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:350
 msgid "Limits traffic matching to the specified rate."
@@ -708,7 +713,7 @@ msgstr "MSS 钳制"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:167
 msgid "Masquerading"
-msgstr "IP 动态伪装"
+msgstr "IPv4 动态伪装"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:213
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:214

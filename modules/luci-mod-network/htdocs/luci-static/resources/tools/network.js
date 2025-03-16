@@ -1084,6 +1084,13 @@ return baseclass.extend({
 		o.datatype = 'uinteger';
 		o.depends({ type: 'bridge', multicast_querier: '1' });
 
+		o = this.replaceOption(s, 'devgeneral', form.ListValue, 'sfp_speed', _('SFP link speed setting'));
+		o.value('', _('Default 10GbE'));
+		o.value('1', _('Enforce 1GbE'));
+		o.value('2', _('Enforce 2.5GbE'));
+		o.depends('name_simple', '10ge1');
+		o.depends('name_simple', '10ge2');
+
 		o = this.replaceOption(s, 'devgeneral', form.Value, 'mtu', _('MTU'));
 		o.datatype = 'range(576, 9200)';
 		o.validate = function(section_id, value) {

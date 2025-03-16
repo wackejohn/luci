@@ -309,6 +309,10 @@ Zone = AbstractFirewallItem.extend({
 	isMasquerade: function() {
 		return (this.get('masq') == '1');
 	},
+    
+	isMasquerade6: function() {
+		return (this.get('masq6') == '1');
+	},
 
 	getName: function() {
 		return this.get('name');
